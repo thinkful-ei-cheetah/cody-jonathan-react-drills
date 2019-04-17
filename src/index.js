@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import HelloWorld from './state-drills/HelloWorld.js';
 import RouletteGun from './state-drills/RouletteGun';
-import App from 'App';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<HelloWorld />, document.getElementById('root'));

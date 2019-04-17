@@ -7,16 +7,25 @@ class Accordian extends Component {
       }
     
     state = {
-        who: 'world'
-
-
+       sections : this.props.sections,
+       activeIndex: null
+    }
+    handleClickedInfo = (index) => {
+        this.setState({
+        activeIndex: index
+        })
+        console.log(index)
     }
 
     render(){
         return(
            <ul>
 
-            {this.props.sections.map((section) => <li>{section.title}</li>)}
+            {this.state.sections.map((section,index) => 
+            <li key = {index}>
+                <button onClick = {() => this.handleClickedInfo(index)}>{section.title}</button> 
+                <p>{this.state.activeIndex === index ? section.content:null}</p>
+            </li>)}
                
            </ul>
        );
